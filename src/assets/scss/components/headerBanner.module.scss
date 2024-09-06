@@ -1,0 +1,25 @@
+@use "./../helper/vairables" as var;
+@use "./../helper/mixins" as mixin;
+
+.headerBanner{
+  width: 100%;
+  background-color: var.$primary;
+  text-align: center;
+  color: var.$light-color;
+
+  .container {
+    padding: 10px;
+    font-size: 12px;
+
+    @include mixin.for-medium-screen {
+      font-size: 14px;
+    }
+
+    a {
+      color: var.$light-color;
+      text-decoration: underline;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+  }
+}

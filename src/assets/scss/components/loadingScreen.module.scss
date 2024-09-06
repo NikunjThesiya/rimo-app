@@ -1,0 +1,28 @@
+@use "./../helper/vairables" as var;
+@use "./../helper/mixins" as mixin;
+
+.loadingScreen {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(var.$primary-dark, 0.8);
+
+  .loader {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 8px solid rgba(var.$light-color, 0.1);
+    border-top: 8px solid var.$primary;
+    animation: spin 1s linear infinite;
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}

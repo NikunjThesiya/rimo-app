@@ -1,0 +1,12 @@
+@use "./../helper/vairables" as var;
+@use "./../helper/mixins" as mixin;
+
+.home {
+  width: 100%;
+  background-color: var.$primary-dark;
+  
+  .container {
+    background-color: var.$primary-dark;
+  } 
+
+}

@@ -1,0 +1,77 @@
+// VARIABLE
+@use "./helper/vairables" as var;
+@use "./helper/mixins" as mixin;
+
+// COMMON STYLES
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: var.$primary-dark;
+}
+
+.custom-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @include mixin.for-medium-screen {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  @include mixin.for-large-screen {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  @include mixin.for-extralarge-screen {
+    padding-left: 95px;
+    padding-right: 95px;
+  }
+}
+
+// COMMON BACKGROUND COLORS
+
+.bg-primary {
+  background-color: var.$primary;
+}
+.bg-primary-dark {
+  background-color: var.$primary-dark;
+}
+.bg-gray-dark {
+  background-color: var.$gray-dark;
+}
+.bg-gray-light {
+  background-color: var.$gray-light;
+}
+.bg-light {
+  background-color: var.$light-color;
+}
+
+// COMMON COLORS
+
+.text-primary {
+  color: var.$primary;
+}
+.text-primary-dark {
+  color: var.$primary-dark;
+}
+.text-gray-dark {
+  color: var.$gray-dark;
+}
+.text-gray-light {
+  color: var.$gray-light;
+}
+.text-light {
+  color: var.$light-color;
+}
+
+.w-full {
+  width: 100%;
+}

@@ -1,0 +1,153 @@
+@use "./../helper/vairables" as var;
+@use "./../helper/mixins" as mixin;
+
+.navbar {
+  width: 100%;
+  background-color: rgba(var.$primary-dark, 1);
+  border-bottom: 1px solid rgba(var.$primary, 0.2);
+
+  .container {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    border-radius: 16px;
+    // Below CSS Generated Automatically By VS CODE Extension It Will Be In Most CSS Files.
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    -ms-border-radius: 16px;
+    -o-border-radius: 16px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 16px;
+    
+    @include mixin.for-medium-screen {
+      align-items: center;
+      flex-direction: row;
+      gap: 16px;
+    }
+    
+    .navLeft {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+
+      @include mixin.for-medium-screen {
+        width: auto;
+      }
+
+      .logo {
+        color: var.$primary;
+        font-weight: bold;
+        font-size: 28px;
+        @include mixin.for-medium-screen {
+          font-size: 30px;
+        }
+      }
+      
+      .toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px;
+        border-radius: 6px;
+        background-color: rgba(var.$light-color, 0.02);
+        cursor: pointer;
+        border: none;
+        // Below CSS Generated Automatically By VS CODE Extension It Will Be In Most CSS Files.
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        -ms-border-radius: 6px;
+        -o-border-radius: 6px;
+
+        &:hover {
+          transform: scale(0.9);
+          -webkit-transform: scale(0.9);
+          -moz-transform: scale(0.9);
+          -ms-transform: scale(0.9);
+          -o-transform: scale(0.9);
+          @include mixin.transition();
+        }
+
+        @include mixin.for-medium-screen
+        {
+          display: none; 
+        }
+
+        & img {
+          width: 20px;
+          height: 20px;
+          object-fit: contain;
+        } 
+      }
+
+    }
+    
+
+    .nav {
+      align-items: center;
+      flex-direction: column;
+      gap: 8px;
+      width: 100%;
+      display: none;
+      
+      @include mixin.for-medium-screen {
+        display: flex;
+        width: auto;
+        flex-direction: row;
+        gap: 16px;
+      }
+
+      .navItem {
+        padding: 8px 16px;
+        margin: 0 10px;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+        border-radius: 16px;
+        color: var.$light-color;
+        cursor: pointer;
+        width: 100%;
+        text-align: center;
+
+        // Below CSS Generated Automatically By VSCODE Extension It Will Be In Most CSS Files.
+        -webkit-border-radius: 16px;
+        -moz-border-radius: 16px;
+        -ms-border-radius: 16px;
+        -o-border-radius: 16px;
+        @include mixin.transition();
+        &:hover
+        {
+          color: var.$primary;
+          background-color: rgba(var.$primary, 0.1);
+        }
+
+        @include mixin.for-medium-screen {
+          width: auto;
+          font-size: 16px;
+          padding: 10px 20px;
+        }
+      }
+
+      .activeNavItem {
+        color: var.$primary;
+        background-color: rgba(var.$primary, 0.1);
+      }
+    }
+
+    .activeNav {
+      display: flex;
+    }
+
+    .inActiveNav {
+      display: none;
+
+      @include mixin.for-medium-screen {
+        display: flex;
+      }
+    }
+
+  }
+}

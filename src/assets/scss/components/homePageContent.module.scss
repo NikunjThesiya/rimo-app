@@ -1,0 +1,64 @@
+@use "./../helper/vairables" as var;
+@use "./../helper/mixins" as mixin;
+
+.characterGrid {
+  display: grid;
+  padding: 50px 0px;
+  gap: 16px;
+  grid-template-columns: 1fr;
+
+  @include mixin.for-small-screen {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.loaderContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+
+  .loader {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 8px solid rgba(var.$light-color, 0.1);
+      border-top: 8px solid var.$primary;
+      animation: spin 1s linear infinite;
+  
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+  
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    }
+}
+
+.loadMoreContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 50px;
+
+  .loadMoreButton {
+    padding: 10px 20px;
+    background-color: var.$primary;
+    color: var.$light-color;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+    border: 1px solid transparent;
+
+    &:hover {
+      background-color: var.$primary-dark;
+      border: 1px solid var.$primary;
+    }
+  }
+}
